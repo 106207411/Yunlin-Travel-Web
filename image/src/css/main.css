@@ -1,0 +1,243 @@
+/*側邊標題*/
+#side_container{
+	height:100%;
+	width:180px;
+	background-color:white;
+	position:fixed;
+	right:0;
+	text-align:center;
+	z-index:1000;
+	overflow:hidden;
+	transition-duration: 0.5s;
+}
+
+#side_header{
+	margin-top:10%;
+	height:100%;
+}
+
+pre{ /*覆蓋bootstrap自帶的css*/
+	display: block;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color:black;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: rgba(0,0,0,0);
+    border: 0px solid #ccc;
+    border-radius: 0px;
+}
+
+.side_item{
+	float:left;
+	margin-left:5%;
+	writing-mode: vertical-rl;
+	letter-spacing:4px;
+}
+
+.side_item span{
+	color:#9D9D9D;
+	letter-spacing:0px;
+}
+.side_item pre:hover{
+	color:#b2881f;
+	transition:0.5s;
+}
+
+.side_item span:hover{
+	color:#2b4f38;
+	transition:1s;
+}
+
+/*開頭地圖的遮罩*/
+#map_cover_text1{
+	font-size:30px;
+	color:#9D9D9D;	
+	margin-top:17%;
+	margin-left:10%;
+	margin-right:25%;
+	letter-spacing:5px;
+	transition: 0.5s;
+}
+
+#map_cover_text2{
+	font-size:40px;
+	color:#FCFCFC;	
+	margin-left:10%;
+	margin-right:25%;
+	letter-spacing:5px;
+	margin-bottom:70px;
+	transition: 0.5s;
+}
+
+/*Opening*/
+#opening{
+	width:100%;
+	height:100%;
+	overflow:hidden;
+	background-color:white;
+	position:absolute;
+	z-index:99999;
+	text-align:center;
+}
+
+#opening_display_block{
+	margin:auto;
+	width:80px;
+	height:80px;
+	position:absolute;
+	top:0; left:0; bottom:0; right:0;
+	text-align:center;
+}
+
+.opening_img{
+	margin:0px auto;
+	width:80px;
+	position:absolute;
+}
+
+#op1{
+	width:100%;
+}
+
+#op2{
+	top:110%;
+	left:40%;
+	width:60%;
+}
+
+#op3{
+	top:95%;
+	left:20%;
+	width:140%;
+}
+
+#op4{
+	top:110%;
+	left:-25%;
+	width:140%;
+}
+
+#op5{
+	width:100%;
+}
+
+/*指示*/
+#map_cover2{
+	overflow: auto;
+	z-index:10;
+	background-color:rgba(0,0,0,0.25);
+	width: 100%;
+    height: 100%;
+	position:absolute;
+	z-index: 9;
+}
+
+#map_cover3{
+	overflow: auto;
+	z-index:10;
+	background-color:rgba(0,0,0,0.25);
+	width: 100%;
+    height: 100%;
+	position:absolute;
+	z-index: 8;
+}
+
+.instruct{
+	position: absolute;
+	z-index: 10;
+	display: inline-block;
+	font-size: 1.5em;
+	white-space: nowrap;
+	color:rgb(235, 235, 235);
+}
+
+#map_cover_ins1{
+	top:20px;
+	left:330px;
+}
+
+#map_cover_ins2{
+	bottom:40px;
+	right:260px;
+}
+
+/*切換底圖之按鈕*/
+.leaflet-control-zoom{
+	display: none;
+}
+
+.leaflet-retina .leaflet-control-layers-toggle {
+	background-image:none;
+	width:30px;
+	height:30px;
+}
+
+.leaflet-control-layers {
+	position: absolute;
+	right:200px;
+	bottom:20px;
+    box-shadow: none;
+    background:transparent; 
+	color:rgb(63, 63, 63);
+	border: 1.3px solid rgba(158, 158, 158,0.2);
+	background: linear-gradient(90deg, rgba(203, 230, 223,0.6), rgba(255, 253, 229,0.5), rgba(232, 243, 216,0.6));
+    border-radius: 5px;
+}
+
+.leaflet-control-layers-toggle::after {
+	color:rgba(0, 0, 0,0.2);
+	content:"M";
+	letter-spacing: -2px;
+	font-size: 20px;
+	font-family: Arial Black;
+	padding: 5px;
+}
+
+
+.leaflet-control-layers-list{
+	width:100px;
+}
+
+.leaflet-top.leaflet-right .leaflet-control-layers:nth-child(3) .leaflet-control-layers-toggle {
+    background-image:url("https://localhost/image/logo.png"); 
+}
+
+.leaflet-control-layers-overlays, .leaflet-control-layers-separator{
+	display: none;
+}
+
+/* toggle button */
+.basemap_change_btn_active{
+	background-color:#FFFFFF;
+	transition:0.5s;
+}
+
+.basemap_change_text{
+	font-size: 12px;
+	color: #9D9D9D;
+	background-color:rgba(255, 253, 229,0.5);
+	position: absolute;
+	white-space: nowrap;
+	right:0;
+	margin-right: 120%;
+}
+
+
+/*自訂*/
+@media screen and (min-width: 0px) and (max-width: 700px) {
+	nav{ display: block; }  /* show it on smaller screen */
+	#side_container,  .oc_loge{ display: none;}
+	#basemap_change{right:30px;bottom:50px;}
+	.leaflet-control-layers{right:30px;bottom:50px;}
+	#map_cover_ins2{right:90px;bottom:60px;}
+}
+@media screen and (min-width: 701px){
+	nav{ display: none; height:0px;}   /* hide it on larger screens */
+	#side_container, .oc_loge{ display: block;}
+	#basemap_change{right:200px;bottom:10px;}
+	.leaflet-control-layers{right:200px;bottom:20px;}
+	#map_cover_ins2{right:260px;bottom:40px;}
+}

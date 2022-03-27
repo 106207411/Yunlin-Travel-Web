@@ -1,0 +1,6 @@
+*.yml
+*.jpg
+*.png
+*.txt
+/image/src/phpScript/*
+/image/src/modal/*

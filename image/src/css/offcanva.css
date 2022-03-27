@@ -1,0 +1,363 @@
+/* The side navigation menu */
+/* reference link: https://www.w3schools.com/howto/howto_js_off-canvas.asp */
+.sidenav {
+  height: 50px; /* 100% Full-height */
+  width: 400px; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 300; /* Stay on top */
+  bottom: 0;
+  left: 1%;
+  background-color: rgb(255,255,255,0.9); /* Black*/
+  /*overflow-y: hidden;  /*Disable horizontal scroll */
+  /*padding-top: 60px;  Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #9D9D9D;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #2b4f38;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+/*自訂*/
+
+/*標頭那列*/
+#bottom_container{
+	position:absolute;
+	width:400px;
+	height:50px;
+	bottom:0;
+	left:1%;
+	z-index:40;
+	overflow:hidden;
+	transition: 0.5s;
+}
+
+#filter_btn{
+	display:none;
+	width:100px;
+	height:50px;
+	position:absolute;
+	text-align:center;
+	opacity:0;
+	background-color:#2b4f38;
+	color:rgba(255,255,255,1);
+	padding-top:13px;
+	margin-left:-10px;
+	z-index:50;
+}
+
+#filter_btn:hover{
+	opacity:1;
+	transition:1s;
+}
+
+#oc_search_block{
+	width:30%;
+	height:50px;
+	background-color:#2b4f38;
+	color:#FCFCFC;
+	padding:13px 10px 15px 10px; 
+	transition: 1s;
+	position:absolute;
+}
+
+#search_icon{
+	display:none;
+	float:right;
+	width:80px;
+	height:25px;
+	color:#9D9D9D;
+	border-radius:10px;
+	text-align:center;
+	letter-spacing:3px;
+	transition: 0.5s;
+	position:relative;
+	z-index:2;
+}
+
+#search_icon_img{
+	position:absolute;
+	right:1%;
+	top:30%;
+	margin-right:20px;
+	margin-top:3px;
+	height:15px;
+	z-index:1;
+	display:none;
+}
+
+#search_icon:hover{
+	background-color:white;
+}
+
+/*去除input框的所有樣式*/
+#SearchText{
+	display:none;
+	width:90%;
+	border:0px; 
+	background: transparent; 
+	outline: none;
+}
+/*-------------------*/
+
+#oc_open_btn{
+	width:70%;
+	height:50px;
+	color:black;	
+	padding:13px 15px 10px;
+	position:absolute;
+	right:0;
+}
+
+#oc_open_btn:hover{
+	color:#9D9D9D;
+	background:linear-gradient(90deg, rgba(203, 230, 223,0.2), rgba(255, 253, 229,0.2), rgba(232, 243, 216,0.2));
+	transition: 1s;
+}
+
+#oc_close_btn{
+	width:50px;
+	height:50px;
+	color:black;
+	text-align:center;
+	font-size:30px;
+	position:absolute;
+	right:0;
+	display:none; /*最初先隱藏*/
+}
+
+#oc_close_btn:hover{
+	color:#9D9D9D;
+	transition: 1s;
+}
+
+#oc_close_btn:active{
+	color:#b2881f;
+}
+
+/*景點資訊那列*/
+#oc_showinfo_block, #oc_showinfo_block_for_web3{
+	width:400px;
+	height:100%;
+	overflow-y:scroll;
+	overflow-x:hidden;
+	padding-bottom:20%;
+	background-color:rgba(255,255,255,0.9);
+	transition:1s;
+}
+
+#oc_showinfo_block_for_web3{
+	padding:5%;
+}
+
+.cell_showinfo{
+	width:400px;
+	height: 160px;
+	transition: background 1s;
+	padding:10px 20px 10px 10px;
+}
+
+.cell_showinfo:hover{
+	background:linear-gradient(90deg, rgba(203, 230, 223,0.6), rgba(255, 253, 229,0.5), rgba(232, 243, 216,0.6));  
+}
+
+.cell_showinfo_photo{
+	max-width:100%;
+	height: 100px;
+	object-fit:cover;
+	border-radius:5px;
+}
+
+.cell_showinfo_photo_block{
+	width:100px;
+	height:100px;
+	float:right;
+	margin-right:5px;
+	border-radius:5px;
+}
+
+.cell_showinfo_title{
+	font-size:24px;
+	color:#2b4f38;
+	width:70%;
+	margin-bottom:2px;
+	overflow-x:scroll;
+}
+
+.cell_showinfo_rating{
+	float:left;
+	border-radius:10px;
+	height:20px;
+	display:inline-block;
+	padding-left:3px;
+	padding-right:3px;
+	text-align:center;
+	margin-bottom:2px;
+	background-color:#b2881f;
+	color:white;
+}
+
+.glyphicon-star{
+	font-size:10px;
+	margin-bottom:5px;
+}
+
+.cell_showinfo_nrating{
+	float:left;
+	margin-left:5px;
+	color:#9D9D9D;
+}
+
+.cell_showinfo_shorttext{
+	float:left;
+	width:70%;
+	height:50px;
+	margin-left:5px;
+	position:relative;
+}
+
+.cell_showinfo_optime, .cell_showinfo_location{
+	font-size:13px;
+	height:20px;
+	width:100%;
+	display:inline-block;
+	position:absolue;
+	overflow-x:scroll;
+}
+
+.oneinrow{
+	white-space: nowrap;
+}
+
+/*來源：https://ithelp.ithome.com.tw/articles/10197593*/
+.cell_showinfo_location, .cell_showinfo_optime, .cell_showinfo_title{
+    overflow: -moz-hidden-unscrollable;
+}
+
+.cell_showinfo_location::-webkit-scrollbar, .cell_showinfo_optime::-webkit-scrollbar, .cell_showinfo_title::-webkit-scrollbar{
+    display: none;
+}
+
+.cell_showinfo_comment{
+	font-size:14px;
+	width:100%;
+	height:20px;
+	border-radius:10px;
+	padding-left:5px;
+	background-color:#c5c5c5;
+	overflow:hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+/*scroll的樣式*/
+::-webkit-scrollbar {
+	width: 7px;	
+}
+
+::-webkit-scrollbar-track {
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	margin:50px -5px 15px 0;
+}
+
+::-webkit-scrollbar-thumb {
+	-webkit-border-radius: 4px;
+	border-radius: 1px;
+	background: #2b4f38;
+	height:30%;
+}
+
+/*Layer filter*/
+#oc_filter_block{
+	width:400px;
+	overflow:hidden;
+	text-align:center;
+	background-color:rgba(255,255,255,0.9);
+	height:0; 
+	opacity: 0;
+	transition:1s;
+}
+
+#cell_filter_submit{
+	width:400px;
+	text-align:center;
+	margin-top:5%;
+}
+
+#layer_filter{
+	position:absolute;
+	top:3%;
+	width:50%;
+	height:50px;
+	z-index:5;
+	margin-left:1%;
+	transition:1s;
+}
+
+.layer_button{
+	float:left;
+	margin-left:2%;
+	height:30px;
+	display:inline-block;
+	padding:3px 10px 0px 10px;
+	font-size:14px;
+	letter-spacing:3px;
+	text-align:center;
+	border-radius:15px;
+	background-color:#b2881f;
+	color:white;
+}
+
+.layer_button:hover{
+	background-color:#6b6a5f;
+	color:white;
+	transition:1.5s;
+}
+
+/* toggle button */
+.layer_button_active{
+	background-color:#FFFFFF;
+	color:#9D9D9D;
+	transition:0.5s;
+}
+
+/*autocomplete*/
+.ui-widget-content {
+	border-radius: 5px;
+	color:rgb(63, 63, 63);
+	border: 1.3px solid rgba(158, 158, 158,0.2);
+	background: linear-gradient(90deg, rgba(222, 228, 214, 0.95), rgba(255, 253, 229,0.95), rgba(232, 243, 216,0.95));
+}
+
+.ui-menu-item:hover{
+	color:#2b4f38;
+	border: 2px solid rgba(67, 105, 9, 0.6);
+	background-color: #9D9D9D;
+}

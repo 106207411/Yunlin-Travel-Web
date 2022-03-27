@@ -1,0 +1,248 @@
+/*page1, 篩選器modal*/
+/*page all，關於我們modal*/
+.select_modal_img{
+	width:50%;
+	max-height: 30em;
+	object-fit:cover;
+	position:absolute;
+	top:24em;
+	left:0em;
+	z-index:1;
+}
+.select_modal_img_cover{
+	width:100%;
+	height:38em;
+	background:linear-gradient(180deg, rgba(242, 242, 242,0.6), rgba(242, 242, 242, 0.5), rgba(217, 217, 217,0.6));  
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:2;
+}
+
+.checkbox_item{
+	float:left;
+	display:inline-block;
+	padding:5px 10px 5px 10px;
+	background-color:white;
+	margin:3px 5px 3px 5px;
+}
+
+#modal_filter .modal-dialog .modal-content, #modal_about .modal-dialog .modal-content, #spot_topic .modal-dialog .modal-content, #rest_topic .modal-dialog .modal-content{
+	background-color:rgb(247, 247, 247);
+	border-radius:0px;
+	height:38em;
+}
+
+#modal_filter .modal-dialog, #modal_about .modal-dialog{
+	height:30em;
+}
+
+#modal_filter .modal-dialog .modal-content button{
+	background-color: rgba(168, 168, 168,0);
+    color:rgb(43, 43, 43);
+}
+
+/*--------------------*/
+/*page2，景點介紹modal*/
+.modal_spot .modal-dialog{
+	min-width:70%;
+}
+
+.modal_spot .modal-dialog .modal-content{
+	background-color:#f2f2f2;
+	border-radius:0px;
+}
+/*scroll的樣式*/
+::-webkit-scrollbar {
+	width: 7px;	
+	height: 5px; 
+}
+
+::-webkit-scrollbar-track {
+	-webkit-border-radius: 4px;
+	border-radius: 10px;
+	margin:50px -5px 15px 0;
+}
+
+::-webkit-scrollbar-thumb {
+	-webkit-border-radius: 4px;
+	border-radius: 1px;
+	background:#808080;
+	height:30%;
+}
+
+/*標題及背景*/
+.spot_modal_name{
+	text-align:center;
+	height:30em;
+	width:100%;
+	float:right;
+}
+
+.spot_modal_name h1{
+	z-index:3;
+	position:relative;
+	color:#FFFFFB;
+	margin-top:3em;
+}
+
+.glyphicon-option-vertical{
+	color:#b2881f;
+	margin-top:10px;
+	font-size:20px;
+}
+
+.spot_modal_img_cover{
+	width:100%;
+	height: 30em;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:2;
+	background:linear-gradient(90deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3));
+}
+
+.spot_modal_img{
+	width:100%;
+	max-height: 30em;
+	object-fit:cover;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:1;
+	margin-bottom:10px;
+}
+
+.modal_spot .modal-content .modal-body button, #modal_about .modal-dialog .modal-content button{
+	position:absolute;
+	top:0;
+	right:0;
+	z-index:3;
+	background:transparent;
+    color:white;
+}
+
+.modal_spot .modal-dialog .modal-content .modal-body h3{
+	margin-left:3%;
+}
+
+/*景點主要資訊*/
+.spot_modal_maininfo{
+	display:block;
+	margin:5%;
+}
+
+.spot_modal_maininfo span{
+	font-size:13px;
+	color:#1C1C1C;
+	letter-spacing:4px;
+}
+
+.spot_modal_maininfo_item{
+	background-color:white;
+	margin-bottom:4px;
+	color:#192b1f;
+	display:inline-block;
+	padding:5px;
+	font-size:1.1em;
+	letter-spacing:0.5px;
+}
+
+/*景點分類*/
+.spot_modal_class{
+	position:absolute;
+	top:28.1em;
+	right:10px;
+	z-index:5;	
+}
+
+.spot_modal_class span{
+	display:flex;
+	text-align:center;
+	padding:3px 4px 3px 2px;
+	background-color:#b2881f;
+	font-size:1em;
+	float:right;
+	margin-left:5px;
+	color:#FFFFFB;
+}
+
+/*景點介紹與評論*/
+.spot_modal_div{
+	width:90%;
+	background-color:#2b4f38;
+	margin:5%;
+	height:300px;
+}
+
+.spot_modal_descr{
+	width:70%;
+	color:#FFFFFB;
+	font-size:1.1em;
+	float:left;
+	text-align:center;
+	padding:10%;
+	height:100%;
+	overflow-y:scroll;
+}
+
+.spot_modal_comment{
+	float:left;
+	width:30%;
+	height:100%;
+	background-color:#FFFFFB;
+}
+
+.comment_title{
+	font-size:1.1em;
+	text-align:center;
+	background-color:#b2881f;
+	color:#FFFFFB;
+}
+
+.prefive_comment_block{
+	background:linear-gradient(90deg, rgba(203, 230, 223,0.4), rgba(255, 253, 229,0.4), rgba(232, 243, 216,0.4));  
+	height:60%;
+	width:100%;
+	padding:2% 2% 2% 2%;
+	overflow-y:scroll;
+	overflow-x: hidden;
+	font-size: 0.9em;
+	padding: 1em;
+	padding-left:1.1em;
+}
+
+.prefive_comment{
+	margin-bottom:10px;
+}
+
+.CommentForm{
+	height:30%;
+}
+
+.CommentText{
+	width:100%;
+	overflow-y:scroll;
+	height:60px;
+	border:0px; 
+	outline: none;
+}
+
+.CommentBtn{
+	float:right;
+	background-color: #9d9d9d;
+	border:none;
+	color:#f2f2f2;
+	font-size: 0.9em;
+	padding: 0;
+	margin-top: -3.5px;
+}
+/*自訂*/
+@media screen and (min-width: 0px) and (max-width: 850px) { /*smaller screen */
+	.spot_modal_img{max-width:100%; height:100%;}
+}
+
+@media screen and (min-width: 851px){ /*larger screens */
+	.spot_modal_img{width:100%; max-height: 30em;}
+}
+/*--------------------*/
