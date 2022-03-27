@@ -1,3 +1,5 @@
-# yunlin-travel
+# Yunlin-Travel-Web
 
-A yunlin travel website created in WebGIS course
+Websites visualizing traveling information in Yunlin, Taiwan
+
+Quick demo: <https://user.sgis.tw/yunlin-travel/>
